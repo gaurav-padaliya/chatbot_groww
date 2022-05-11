@@ -1,0 +1,74 @@
+body{
+    padding: 20px;
+    box-sizing: content-box;
+    /* width: 100%; */
+    height: 600px;
+}
+*{
+    /* margin: 2px; */
+    font-family:  Roboto,system-ui;
+    font-size: 20px;
+}
+.c1{
+
+    width: 100%;
+    height: 600px;
+   /* width: 1600px; */
+}
+
+.secContainer{
+    width: 100%;
+    height: 60px;
+    box-sizing: inherit;
+    border-bottom: 0.01rem solid rgb(122, 122, 122);
+    color: rgb(201, 142, 64);
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+}
+.divisionBottom{
+    box-sizing:initial;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    line-height: 15px;
+    padding-right: 45px;
+    padding-left: 7px;
+    height: 54px;
+    color: black;
+    cursor: pointer;
+    align-items: center;
+}
+.Con31{
+    margin: 40px 0 0 0;
+}
+
+.line{
+    left: 20px;
+    top: 147px;
+    /* top: 100px; */
+    width: 65px;
+    position: absolute;
+    height: 3px;
+    transition: left .2s linear,width .2s linear;
+    color: #00d09c;
+    border-bottom: solid #00d09c;
+    border-width: 4px;
+}
+
+/* button styling */
+.chatbotBtn {
+    cursor: pointer;
+    width: 20%;
+    max-width: 30px;
+    position: absolute;
+    bottom: 7%;
+    right: 7%;
+  }
+  
+  .image {
+    width: 140%;
+    height: 46px;
+  }
+/* button styling end */
+
