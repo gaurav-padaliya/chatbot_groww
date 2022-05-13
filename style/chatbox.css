@@ -43,11 +43,12 @@
 
 
 .chat-box {
+  z-index: 11;
   display:none;
   background: #efefef;
   position:fixed;
-  right:100px;
-  bottom:95px;  
+  right:115px;
+  bottom:80px;  
   width:350px;
   max-width: 85vw;
   max-height:100vh;
@@ -62,7 +63,7 @@
 }
 .chat-box-header {
   background: #00d09c;
-  height:70px;
+  height:50px;
   border-top-left-radius:5px;
   border-top-right-radius:5px; 
   color:white;
@@ -72,7 +73,7 @@
 }
 .chat-box-body {
   position: relative;  
-  height:370px;  
+  height:30px;  
   height:auto;
   border:1px solid #ccc;  
   overflow: hidden;
@@ -182,6 +183,7 @@
 }
 .cm-msg-text {
   background:white;
+  /* font-size: 15px; */
   padding:10px 15px 10px 15px;  
   color:#666;
   max-width:75%;
@@ -196,6 +198,7 @@
 }
 .chat-msg.self > .cm-msg-text {  
   float:right;
+ 
   margin-right:10px;
   background: #00d09c;
   color:white;
