@@ -95,3 +95,15 @@ function serverMessage(msg) {
     $(".chat-logs").stop().animate({ scrollTop: $(".chat-logs")[0].scrollHeight}, 1000);    
 }
 
+function handleFaq(el){
+  // console.log(el.outerText);
+  const msg = el.outerText
+  generate_message(msg, 'self');
+  fetchmsg(msg);
+  document.querySelector(".sug").style.opacity = "0";
+  setTimeout(()=>{
+    document.querySelector(".chat-logs").style.height = "100%";
+    document.querySelector(".sug").style.display = "none";
+    
+  },1000);
+}
