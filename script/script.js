@@ -1,19 +1,12 @@
 var INDEX = 0;
 var isLoggedIn = false;
+var $mainPopUp = $(".main-popup");
+var $signIn = $("#sign-in");
+var $register = $("#register");
+var $formSignIn = $("form.sign-in");
+var $formRegister = $("form.register");
+var $avatar = $(".nav-item.dropdown");
 
-function toggleIsLoggedIn(isValid) {
-  if (isValid) {
-    isLoggedIn = true;
-    document.getElementById("loginRegisterBtn").style.display= "none";
-    $mainPopUp.removeClass("visible");
-    $avatar.removeClass("invisible");
-    $avatar.addClass("visible");
-
-  } else {
-    isLoggedIn = false;
-    document.getElementById("loginRegisterBtn").style.display= "inline";
-  }
-}
 document.getElementById("chat-submit").onclick = (e) => {
   e.preventDefault();
   var msg = document.getElementById("chat-input").value;
@@ -26,45 +19,6 @@ document.getElementById("chat-submit").onclick = (e) => {
   setTimeout(function () {
     // generate_message(msg, 'user');
   }, 1000);
-};
-document.getElementById("register-submit").onclick = (e) => {
-  e.preventDefault();
-  var email = document.getElementById("email-register").value;
-  var password = document.getElementById("password-register").value;
-  var url = "http://localhost:3030/register";
-  (async () => {
-    const rawResponse = await fetch(url, {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email: email, password: password }),
-    });
-    const content = await rawResponse.json();
-    console.log(content);
-  })();
-};
-document.getElementById("login-submit").onclick = (e) => {
-  e.preventDefault();
-  var email = document.getElementById("email").value;
-  var password = document.getElementById("password").value;
-  console.log(email, password);
-
-  var url = "http://localhost:3030/login";
-  (async () => {
-    const rawResponse = await fetch(url, {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email: email, password: password }),
-    });
-    const content = await rawResponse.json();
-    console.log(content);
-    toggleIsLoggedIn(content.isLoggedIn);
-  })();
 };
 
 var generate_message = (msg, type) => {
@@ -154,16 +108,62 @@ function serverMessage(msg) {
     .animate({ scrollTop: $(".chat-logs")[0].scrollHeight }, 1000);
 }
 
-var $mainPopUp = $(".main-popup");
-var $signIn = $("#sign-in");
-var $register = $("#register");
-var $formSignIn = $("form.sign-in");
-var $formRegister = $("form.register");
-var $avatar = $(".nav-item.dropdown");
+// login/Register form code starts
+function toggleIsLoggedIn(isValid) {
+  if (isValid) {
+    isLoggedIn = true;
+    document.getElementById("loginRegisterBtn").style.display = "none";
+    $mainPopUp.removeClass("visible");
+    $avatar.removeClass("invisible");
+    $avatar.addClass("visible");
+  } else {
+    isLoggedIn = false;
+    document.getElementById("loginRegisterBtn").style.display = "inline";
+  }
+}
+
+document.getElementById("register-submit").onclick = (e) => {
+  e.preventDefault();
+  var email = document.getElementById("email-register").value;
+  var password = document.getElementById("password-register").value;
+  var url = "http://localhost:3030/register";
+  (async () => {
+    const rawResponse = await fetch(url, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email: email, password: password }),
+    });
+    const content = await rawResponse.status;
+    if (content == "201") {
+      $mainPopUp.removeClass("visible");
+    }
+  })();
+};
+
+document.getElementById("login-submit").onclick = (e) => {
+  e.preventDefault();
+  var email = document.getElementById("email").value;
+  var password = document.getElementById("password").value;
+
+  var url = "http://localhost:3030/login";
+  (async () => {
+    const rawResponse = await fetch(url, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email: email, password: password }),
+    });
+    const content = await rawResponse.json();
+    toggleIsLoggedIn(content.isLoggedIn);
+  })();
+};
 
 $(".loginRegisterBtn").on("click", function () {
-  console.log("Btn got clicked ");
-  // $overlay.addClass("visible");
   $mainPopUp.addClass("visible");
   $signIn.addClass("active");
   $register.removeClass("active");
@@ -172,7 +172,6 @@ $(".loginRegisterBtn").on("click", function () {
 });
 $("#popup-close-button a").on("click", function (e) {
   e.preventDefault();
-  // $overlay.removeClass("visible");
   $mainPopUp.removeClass("visible");
 });
 
@@ -190,9 +189,7 @@ $register.on("click", function () {
   $formRegister.addClass("move-left");
 });
 
-$("input").on("submit", function (e) {
-  e.preventDefault(); //used to prevent submission of form...remove for real use
-});
 $(".closeBtn").on("click", function () {
   $mainPopUp.removeClass("visible");
 });
+// login/Register form code ends

@@ -1,25 +1,4 @@
-var express = require("express");
-var passport = require("passport");
-var bodyParser = require("body-parser");
-var LocalStrategy = require("passport-local");
-var passportLocalMongoose = require("passport-local-mongoose");
 var User = require("./dataBase");
-var app = express();
-
-// app.set("view engine", "ejs");
-// app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(
-//   require("express-session")({
-//     secret: "node js mongodb",
-//     resave: false,
-//     saveUninitialized: false,
-//   })
-// );
-app.use(passport.initialize());
-app.use(passport.session());
-// passport.use(new LocalStrategy(User.authenticate()));
-// passport.serializeUser(User.serializeUser());
-// passport.deserializeUser(User.deserializeUser());
 
 // Handling user signup
 exports.register = function (req, res) {
@@ -65,11 +44,3 @@ exports.login = function (req, res) {
   });
   console.log(isValid);
 };
-//Handling user logout
-app.get("/logout", function (req, res) {
-  console.log("logged out");
-});
-function isLoggedIn(req, res, next) {
-  // if (req.isAuthenticated()) return next();
-  //   res.redirect("/login");
-}
