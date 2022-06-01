@@ -1,4 +1,19 @@
 var INDEX = 0;
+var isLoggedIn = false;
+
+function toggleIsLoggedIn(isValid) {
+  if (isValid) {
+    isLoggedIn = true;
+    document.getElementById("loginRegisterBtn").style.display= "none";
+    $mainPopUp.removeClass("visible");
+    $avatar.removeClass("invisible");
+    $avatar.addClass("visible");
+
+  } else {
+    isLoggedIn = false;
+    document.getElementById("loginRegisterBtn").style.display= "inline";
+  }
+}
 document.getElementById("chat-submit").onclick = (e) => {
   e.preventDefault();
   var msg = document.getElementById("chat-input").value;
@@ -32,8 +47,10 @@ document.getElementById("register-submit").onclick = (e) => {
 };
 document.getElementById("login-submit").onclick = (e) => {
   e.preventDefault();
-  var email = document.getElementById("email-register").value;
-  var password = document.getElementById("password-register").value;
+  var email = document.getElementById("email").value;
+  var password = document.getElementById("password").value;
+  console.log(email, password);
+
   var url = "http://localhost:3030/login";
   (async () => {
     const rawResponse = await fetch(url, {
@@ -46,6 +63,7 @@ document.getElementById("login-submit").onclick = (e) => {
     });
     const content = await rawResponse.json();
     console.log(content);
+    toggleIsLoggedIn(content.isLoggedIn);
   })();
 };
 
@@ -141,6 +159,7 @@ var $signIn = $("#sign-in");
 var $register = $("#register");
 var $formSignIn = $("form.sign-in");
 var $formRegister = $("form.register");
+var $avatar = $(".nav-item.dropdown");
 
 $(".loginRegisterBtn").on("click", function () {
   console.log("Btn got clicked ");
@@ -173,4 +192,7 @@ $register.on("click", function () {
 
 $("input").on("submit", function (e) {
   e.preventDefault(); //used to prevent submission of form...remove for real use
+});
+$(".closeBtn").on("click", function () {
+  $mainPopUp.removeClass("visible");
 });

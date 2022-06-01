@@ -119,9 +119,9 @@ body{
     top: 25%;
     margin: 0;
     width: 50%;
-    height: 490px;
+    height: 520px;
     background-color: #eff1ef;
-    border-radius: 15px;
+    /* border-radius: 15px; */
     z-index: 15;
     opacity: 0;
     visibility: hidden;
@@ -142,28 +142,29 @@ body{
     height: 62px;
     width: 100%;
   }
-  #popup-close-button a {
+  #popup-close-button{
     position: absolute;
     right: 10px;
     top: -30px;
     width: 22px;
     height: 22px;
+    background-color: black;
   }
-  #popup-close-button a::before {
+  #popup-close-button::before {
     content: '';
     position: absolute;
     right: 10px;
     top: 0;
     width: 3px;
     height: 25px;
-    background-color: black;
+    background-color: white;
     -webkit-transform: rotate(45deg);
     -moz-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     -o-transform: rotate(45deg);
     transform: rotate(45deg);
   }
-  #popup-close-button a::after {
+  #popup-close-button::after {
     content: '';
     position: absolute;
     right: 10px;
@@ -177,6 +178,20 @@ body{
     -o-transform: rotate(-45deg);
     transform: rotate(-45deg);
   }
+  /* #popup-close-button:before, .close:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 33px;
+    width: 2px;
+    background-color: #333;
+  }
+  #popup-close-button:before {
+    transform: rotate(45deg);
+  }
+  #popup-close-button:after {
+    transform: rotate(-45deg);
+  } */
   .popup-header ul {
     margin: 0;
     padding: 0;
@@ -347,4 +362,12 @@ body{
   
   p.check-mark label {
     margin-left: 5px;
+  }
+  #main-popup-close{
+    width:100%;
+    background-color: white;
+  }
+  #main-popup-close img{
+      position: relative;
+      left: calc(100% - 30px);
   }

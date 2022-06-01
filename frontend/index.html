@@ -104,8 +104,8 @@
                   />
                 </a>
               </li>
-              <!-- 
-              <li class="nav-item dropdown">
+              
+              <li class="nav-item dropdown invisible">
                 <a
                   class="nav-link dropdown-toggle d-flex align-items-center"
                   href="#"
@@ -133,8 +133,8 @@
                     <a class="dropdown-item" href="#">complete KYC</a>
                   </li>
                 </ul>
-              </li> -->
-              <li class="nav-item">
+              </li>
+              <li class="nav-item" id="loginRegisterBtn">
                 <button class="loginRegisterBtn">Login/Register</button>
               </li>
             </ul>
@@ -207,8 +207,15 @@
       <!-- Login/Register popup code start -->
       <!-- <div class="overlay"></div> -->
       <div class="main-popup">
+      <div id="main-popup-close">
+        <img src="../assets/icons8-close.svg"
+                   alt="image"
+                    width="22"
+                    height="22"
+                    class="closeBtn"
+                    />
+      </div>
         <div class="popup-header">
-          <div id="popup-close-button"><a href="#"></a></div>
           <ul>
             <li><a href="#" id="sign-in">Sign In</a></li>
             <li><a href="#" id="register">Register</a></li>

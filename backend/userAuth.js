@@ -21,7 +21,6 @@ app.use(passport.session());
 // passport.serializeUser(User.serializeUser());
 // passport.deserializeUser(User.deserializeUser());
 
-
 // Handling user signup
 exports.register = function (req, res) {
   var email = req.body.email;
@@ -43,18 +42,34 @@ exports.register = function (req, res) {
 };
 
 //Handling user login
-(exports.login = passport.authenticate("local", {
-  successRedirect: "/home",
-  failureRedirect: "/login",
-})),
-  function (req, res) {};
-
+exports.login = function (req, res) {
+  var isValid = false;
+  console.log(req.body);
+  User.find(function (err, users) {
+    if (!err) {
+      for (var i = 0; i < users.length; i++) {
+        if (
+          req.body.email == users[i].userName &&
+          req.body.password == users[i].password
+        ) {
+          isValid = true;
+          res.status(200).send({ isLoggedIn: true });
+        }
+      }
+      if (!isValid) {
+        res.status(401).send({ isLoggedIn: false });
+      }
+    } else {
+      res.send(err);
+    }
+  });
+  console.log(isValid);
+};
 //Handling user logout
 app.get("/logout", function (req, res) {
-  req.logout();
-  res.redirect("/");
+  console.log("logged out");
 });
 function isLoggedIn(req, res, next) {
-  if (req.isAuthenticated()) return next();
+  // if (req.isAuthenticated()) return next();
   //   res.redirect("/login");
 }
