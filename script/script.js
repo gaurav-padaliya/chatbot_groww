@@ -193,3 +193,16 @@ $(".closeBtn").on("click", function () {
   $mainPopUp.removeClass("visible");
 });
 // login/Register form code ends
+=======
+function handleFaq(el){
+  // console.log(el.outerText);
+  const msg = el.outerText
+  generate_message(msg, 'self');
+  fetchmsg(msg);
+  document.querySelector(".sug").style.opacity = "0";
+  setTimeout(()=>{
+    document.querySelector(".chat-logs").style.height = "100%";
+    document.querySelector(".sug").style.display = "none";
+    
+  },1000);
+}

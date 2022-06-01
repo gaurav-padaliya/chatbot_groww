@@ -13,13 +13,13 @@
     />
     <link rel="stylesheet" href="../style/style.css" />
     <link rel="stylesheet" href="../style/chatbox.css" />
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="../style/grid.css" />
     <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
   </head>
   <body>
     <div class="c1">
+
+
       <!-- newbar -->
       <nav class="navbar navbar-expand-lg navbar-light bg">
         <div class="container-fluid">
@@ -107,48 +107,17 @@
                   />
                 </a>
               </li>
-
-              <li class="nav-item dropdown invisible">
-                <a
-                  class="nav-link dropdown-toggle d-flex align-items-center"
-                  href="#"
-                  id="navbarDropdownMenuLink"
-                  role="button"
-                  data-mdb-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  <img
-                    src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img (31).webp"
-                    class="rounded-circle"
-                    height="35"
-                    alt="Avatar"
-                    loading="lazy"
-                  />
-                </a>
-                <ul
-                  class="dropdown-menu"
-                  aria-labelledby="navbarDropdownMenuLink"
-                >
-                  <li>
-                    <a class="dropdown-item" href="#">Orders</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="#">complete KYC</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item" id="loginRegisterBtn">
-                <button class="loginRegisterBtn">Login/Register</button>
-              </li>
             </ul>
           </div>
         </div>
       </nav>
       <!-- newbar end -->
 
+
+
       <!-- nevbar2 -->
       <div class="secContainer">
-        <div class="line"></div>
+        <div class="line" style="left: 159px;top: 147px;"></div>
         <div class="divisionBottom" id="stock"><a href="/frontend/index.html"> Stocks</a></div>
         <div class="divisionBottom"><a href="/frontend/mutual_fund.html"> Mututal funds</a></div>
         <div class="divisionBottom"><a href="/frontend/fixedDeposit.html"> Fixed deposit</a></div>
@@ -156,17 +125,22 @@
       </div>
       <!-- nevbar2 end-->
 
+
+
+
       <!-- bottom content  -->
       <div class="thirdContainer">
         <div class="Con31">
           <div class="con32">MARKET OPENS AT 09:15 AM</div>
         </div>
       </div>
-      <!-- bottom content end -->
+    <!-- bottom content end -->
 
-      <!-- chatting box code -->
+
+
+    <!-- chatting box code -->
       <div class="chatbotBtn">
-        <img id="open" src="../assets/chatbot.png" alt="Avatar" class="image" />
+          <img id="open" src="../assets/chatbot.png" alt="Avatar" class="image" />
       </div>
 
       <div class="chat-box">
@@ -185,7 +159,6 @@
             <!-- <div class="messUser">hello</div>
             <div class="messBot">hii</div>
              -->
-
              <div class="chat-logs" style="height: 68%; overflow-y: scroll; ">
 
              </div>
@@ -194,7 +167,6 @@
               <div id = "faq2" class="item" onclick="handleFaq(this)" >Hello world gaurav</div>
               <div id = "faq3" class="item" onclick="handleFaq(this)" >Near of you and all these</div>
             </div>
-
           </div>
          
           <!--chat-log -->
@@ -205,9 +177,7 @@
           <form id="myForm" method="post">
             <input
               type="text"
-              id="chat-input"
-              name="chat-input"
-              class="message-input"
+              id="chat-input" name="chat-input" class="message-input"
               placeholder="Send a message..."
             />
             <button type="submit" class="chat-submit" id="chat-submit">
@@ -218,68 +188,17 @@
       </div>
       <!-- chatting box code end -->
 
-      <!-- Login/Register popup code start -->
-      <div class="main-popup">
-        <div id="main-popup-close">
-          <img
-            src="../assets/icons8-close.svg"
-            alt="image"
-            width="22"
-            height="22"
-            class="closeBtn"
-          />
-        </div>
-        <div class="popup-header">
-          <ul>
-            <li><a href="#" id="sign-in">Sign In</a></li>
-            <li><a href="#" id="register">Register</a></li>
-          </ul>
-        </div>
-        <!--.popup-header-->
-        <div class="popup-content">
-          <form action="#" class="sign-in">
-            <label for="email">Email:</label>
-            <input type="text" id="email" />
-            <label for="password">Password:</label>
-            <input type="password" id="password" />
-            <p class="check-mark">
-              <input type="checkbox" id="remember-me" />
-              <label for="remember-me">Remember me</label>
-            </p>
-            <input type="submit" id="login-submit" value="Submit" />
-          </form>
 
-
-          <form action="#" class="register">
-            <label for="email-register">Email:</label>
-            <input type="text" id="email-register" />
-            <label for="password-register">Password:</label>
-            <input type="password" id="password-register" />
-            <label for="password-confirmation">Confirm Password:</label>
-            <input type="password" id="password-confirmation" />
-            <p class="check-mark">
-              <input type="checkbox" id="accept-terms" />
-              <label for="accept-terms"
-                >I agree to the <a href="#">Terms</a></label
-              >
-            </p>
-            <input type="submit" id="register-submit" value="Create Account" />
-          </form>
-        </div>
-        <!--.popup-content-->
-      </div>
-      <!--.main-popup-->
-
-
+      <!-- bottom UI -->
       <div class="cont1 m-2 p-2">
+
         <div class="box1">
-          <!-- index -->
           <div class="container">
 
             <nav class="navbar navbar-light bg-light m-3">
               <div class="container-fluid">
                 <a class="navbar-brand" href="#">
-                  INDEX
+                  Popular Funds
                 </a>
               </div>
             </nav>
@@ -288,7 +207,7 @@
                 <div class="card">
                   <div class="card-body">
                     <h5 class="card-title">NIFTY 50</h5>
-                    <p class="card-text">15,108.00 171.55 (0.00%)</p>
+                    <p class="card-text">15,108.00 (0.00%)</p>
                   </div>
                 </div>
               </div>
@@ -309,9 +228,8 @@
                 </div>
               </div>
             </div>
-
+            
           </div>
-      <!-- index end -->
         </div>
         <div class="box2">
           <div class="container">
@@ -319,7 +237,7 @@
             <nav class="navbar navbar-light bg-light m-3">
               <div class="container-fluid">
                 <a class="navbar-brand" href="#">
-                  INDEX
+                  Popular Funds
                 </a>
               </div>
             </nav>
@@ -352,56 +270,8 @@
             
           </div>
         </div>
-        <div class="box3">
-          <div class="container">
-
-            <nav class="navbar navbar-light bg-light m-3">
-              <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                  INDEX
-                </a>
-              </div>
-            </nav>
-            <div class="row m-3">
-              <div class="col-sm-3 ">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">NIFTY 50</h5>
-                    <p class="card-text">15,108.00 (0.00%)</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-3 ">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">NIFTY 50</h5>
-                    <p class="card-text">15,108.00 (0.00%)</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-3 ">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">NIFTY 50</h5>
-                    <p class="card-text">15,108.00 (0.00%)</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-          </div>
-        </div>
+        <div class="box3"></div>
         <div class="box4">
-          <div class="col card cornerBox">
-            <div class="card-body ">
-            <div class="card boxItem m-2"><div class="card-body"> F&O - Futures & Options</div></div>
-            <div class="card boxItem m-2"><div class="card-body"> ETF - Exchange Traded Funds</div></div>
-            <div class="card boxItem m-2"><div class="card-body"> IPO - Initial Public Offerings</div></div>
-            <div class="card boxItem m-2"><div class="card-body"> SGB - Sovereign Gold Bond</div></div>
-            </div>
-          </div>
-        </div>
-        <div class="box5">
           <div class="col card cornerBox">
             <div class="card-body ">
               <img src="../assets/account_setup.png" class="card-img-top" alt="img">
@@ -410,22 +280,21 @@
             </div>
           </div>
         </div>
+        <div class="box5"></div>
       </div>
+
 
     </div>
 
+    
     <script src="../script/script.js"></script>
     <script src="../script/ChatBotF.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.0.0/mdb.min.js"
-      integrity="sha512-7HDUKBIUa1tykYCUINFix0eJNScy99DDTEVb+Hy6V82NtrnOaMYK0nf2HA2NFRXLv9CL5BnlXdu9rFvK9cms6A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
+    >
+
+    </script>
   </body>
 </html>
