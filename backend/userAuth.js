@@ -1,6 +1,6 @@
 var User = require("./dataBase");
 
-// Handling user signup
+// Handling user register
 exports.register = function (req, res) {
   var email = req.body.email;
   var password = req.body.password;
