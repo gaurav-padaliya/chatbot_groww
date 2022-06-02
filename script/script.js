@@ -193,7 +193,7 @@ $(".closeBtn").on("click", function () {
   $mainPopUp.removeClass("visible");
 });
 // login/Register form code ends
-=======
+
 function handleFaq(el){
   // console.log(el.outerText);
   const msg = el.outerText

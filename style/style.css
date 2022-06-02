@@ -2,63 +2,6 @@
 html {
   box-sizing: border-box;
 }
-
-body {
-  padding: 20px;
-  box-sizing: content-box;
-  /* width: 100%; */
-  height: 600px;
-}
-* {
-  /* margin: 2px; */
-  font-family: Roboto, system-ui;
-  font-size: 20px;
-}
-.c1 {
-  width: 100%;
-  height: 600px;
-  /* width: 1600px; */
-}
-
-.secContainer {
-  width: 100%;
-  height: 60px;
-  box-sizing: inherit;
-  border-bottom: 0.01rem solid rgb(122, 122, 122);
-  color: rgb(201, 142, 64);
-  background-color: rgb(255, 255, 255);
-  display: flex;
-  align-items: center;
-}
-.divisionBottom {
-  box-sizing: initial;
-  display: flex;
-  align-items: center;
-  font-size: 18px;
-  line-height: 15px;
-  padding-right: 45px;
-  padding-left: 7px;
-  height: 54px;
-  color: black;
-  cursor: pointer;
-  align-items: center;
-}
-.Con31 {
-  margin: 40px 0 0 0;
-}
-
-.line {
-  left: 20px;
-  top: 147px;
-  /* top: 100px; */
-  width: 65px;
-  position: absolute;
-  height: 3px;
-  transition: left 0.2s linear, width 0.2s linear;
-  color: #00d09c;
-  border-bottom: solid #00d09c;
-  border-width: 4px;
-=======
 body{
     padding: 20px;
     box-sizing: content-box;
@@ -114,7 +57,7 @@ a:hover{
 
 .line{
     left: 20px;
-    top: 147px;
+    top: 151px;
     /* top: 100px; */
     width: 65px;
     position: absolute;
@@ -138,19 +81,8 @@ a:hover{
 }
 
 .image {
-  width: 140%;
-  height: 46px;
-}
-
-    cursor: pointer;
-    width: 20%;
-    max-width: 30px;
-    position: absolute;
-    bottom: 7%;
-    right: 7%;
-  }
-  
-  .image {
+  /* width: 140%;
+  height: 46px; */
     z-index: 10;
     position: fixed;
     right: 61px;
@@ -164,7 +96,7 @@ a:hover{
 /* login/Register css starts */
 .loginRegisterBtn {
   position: relative;
-  left: 5%;
+  left: 0%;
   top: 10%;
   height: 50px;
   width: 145px;
@@ -183,13 +115,14 @@ a:hover{
 }
 .main-popup {
   position: fixed;
-  left: 25%;
-  top: 25%;
+  font-weight: 500;
+  left: 32.5%;
+  top: 12%;
   margin: 0;
-  width: 50%;
-  height: 520px;
+  width: 35%;
+  height: 480px;
   background-color: #eff1ef;
-  /* border-radius: 15px; */
+  border-radius: 5px;
   z-index: 15;
   opacity: 0;
   visibility: hidden;
@@ -223,7 +156,7 @@ a:hover{
 
 .popup-header ul li a {
   display: block;
-  padding: 20px 0;
+  padding: 15px 0;
   margin: 0;
   text-decoration: none;
   font-size: 1.2em;
@@ -274,7 +207,7 @@ form.sign-in.move-left {
 
 form label {
   font-size: 1.1em;
-  color: black;
+  color: rgba(35, 34, 34, 0.801);
   margin-left: 23px;
 }
 
@@ -312,7 +245,7 @@ input#register-submit {
   width: 90%;
   margin-left: 5%;
   margin-right: 5%;
-  margin-top: 25px;
+  margin-top: 12px;
   padding: 0;
   cursor: pointer;
   outline: none;
@@ -343,7 +276,7 @@ form.register input {
   border-radius: 5px;
   width: 90%;
   height: 40px;
-  margin: 5px 5% 15px 5%;
+  margin: 5px 5% 10px 5%;
   padding: 10px;
   font-size: 1em;
   outline: none;
