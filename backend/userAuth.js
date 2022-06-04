@@ -22,15 +22,16 @@ exports.register = function (req, res) {
 
 //Handling user login
 exports.login = function (req, res) {
-  var isValid = false;
-  console.log(req.body);
+  let isValid = false;
+  console.log(req.body)
   User.find(function (err, users) {
+    // console.log(req.body+" "+JSON.parse(users));
     if (!err) {
       for (var i = 0; i < users.length; i++) {
         if (
-          req.body.email == users[i].userName &&
-          req.body.password == users[i].password
-        ) {
+          req.body.email === users[i].userName &&
+          req.body.password === users[i].password
+          ) {
           isValid = true;
           res.status(200).send({ isLoggedIn: true });
         }
