@@ -7,6 +7,15 @@ var $formSignIn = $("form.sign-in");
 var $formRegister = $("form.register");
 var $avatar = $(".nav-item.dropdown");
 
+if(localStorage.getItem('isLoggedIn')) isLoggedIn=true;
+toggleIsLoggedIn(isLoggedIn);
+
+// const doLogout = ()=>{
+//   localStorage.setItem('isLoggedIn',false);
+//   console.log(localStorage.getItem('isLoggedIn'));
+//   location.reload();
+// }
+
 document.getElementById("chat-submit").onclick = (e) => {
   e.preventDefault();
   var msg = document.getElementById("chat-input").value;
@@ -112,12 +121,14 @@ function serverMessage(msg) {
 function toggleIsLoggedIn(isValid) {
   if (isValid) {
     isLoggedIn = true;
+    localStorage.setItem('isLoggedIn',true);
     document.getElementById("loginRegisterBtn").style.display = "none";
     $mainPopUp.removeClass("visible");
     $avatar.removeClass("invisible");
     $avatar.addClass("visible");
   } else {
     isLoggedIn = false;
+    localStorage.setItem('isLoggedIn',false);
     document.getElementById("loginRegisterBtn").style.display = "inline";
   }
 }
