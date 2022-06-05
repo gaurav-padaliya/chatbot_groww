@@ -7,14 +7,13 @@ var $formSignIn = $("form.sign-in");
 var $formRegister = $("form.register");
 var $avatar = $(".nav-item.dropdown");
 
-if(localStorage.getItem('isLoggedIn')) isLoggedIn=true;
+if(sessionStorage.getItem('isLoggedIn') === 'true'){isLoggedIn=true;}
 toggleIsLoggedIn(isLoggedIn);
 
-// const doLogout = ()=>{
-//   localStorage.setItem('isLoggedIn',false);
-//   console.log(localStorage.getItem('isLoggedIn'));
-//   location.reload();
-// }
+document.getElementById("logout").onclick = () =>{
+  sessionStorage.clear();
+  location.reload();
+}
 
 document.getElementById("chat-submit").onclick = (e) => {
   e.preventDefault();
@@ -86,14 +85,9 @@ function fetchmsg(text) {
 
   fetch(url, fetchData)
     .then((res) => {
-      // console.log(data);
-      // console.log(res+ "hello");
       return res.json();
     })
     .then((response) => {
-      // console.log("yes",response);
-      // var a =`${response.fulfillmentText}`;
-      //  console.log("a = ",a);
       serverMessage(response.fulfillmentText);
     })
     .catch((error) => console.error("gaurav Error h:", error));
@@ -121,14 +115,14 @@ function serverMessage(msg) {
 function toggleIsLoggedIn(isValid) {
   if (isValid) {
     isLoggedIn = true;
-    localStorage.setItem('isLoggedIn',true);
+    sessionStorage.setItem('isLoggedIn',true);
     document.getElementById("loginRegisterBtn").style.display = "none";
     $mainPopUp.removeClass("visible");
     $avatar.removeClass("invisible");
     $avatar.addClass("visible");
   } else {
     isLoggedIn = false;
-    localStorage.setItem('isLoggedIn',false);
+    sessionStorage.setItem('isLoggedIn',false);
     document.getElementById("loginRegisterBtn").style.display = "inline";
   }
 }
