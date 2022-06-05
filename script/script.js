@@ -7,11 +7,17 @@ var $formSignIn = $("form.sign-in");
 var $formRegister = $("form.register");
 var $avatar = $(".nav-item.dropdown");
 
-if(sessionStorage.getItem('isLoggedIn') === 'true'){isLoggedIn=true;}
+if(sessionStorage.getItem('isLoggedIn') === 'true'){
+  isLoggedIn=true;
+  document.querySelector(".kyc-dis").style.display = "none";
+  document.querySelector(".kyc-user").style.display = "block";
+}
 toggleIsLoggedIn(isLoggedIn);
 
 document.getElementById("logout").onclick = () =>{
   sessionStorage.clear();
+  document.querySelector(".kyc-dis").style.display = "block";
+  document.querySelector(".kyc-user").style.display = "none";
   location.reload();
 }
 

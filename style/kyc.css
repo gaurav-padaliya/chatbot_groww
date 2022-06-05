@@ -1,0 +1,13 @@
+.kyc{
+    margin: 13px 9px;
+    width: inherit;
+    display: flex;
+    justify-content: space-around;
+    font-weight: 500;
+}
+.kyc1{
+    color: #f4fffb;
+    background-color: #00d09cb3;
+    border-radius: 9px;
+    text-align: center;
+}
