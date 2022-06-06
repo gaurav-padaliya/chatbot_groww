@@ -37,8 +37,11 @@ const textQuery = async (Utext,userId ) => {
         console.log('Detected intent'+ responses);
         const arr = {
             queryText: responses[0].queryResult.queryText,
-            fulfillmentText: responses[0].queryResult.fulfillmentText
+            fulfillmentText: responses[0].queryResult.fulfillmentText,
+            fulfillmentMessages: responses[0].queryResult.fulfillmentMessages
+
         }
+        // console.log(responses);
         return arr;
     }catch(err){
         console.log(err);

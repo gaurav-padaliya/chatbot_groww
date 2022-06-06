@@ -36,21 +36,23 @@
   }
   
   .box4 {
+    width: 350px;
       /* background-color: rgb(255, 0, 0); */
       grid-column-start: 4;
       grid-column-end: 6;
       grid-row-start: 1;
       grid-row-end: 4;
-      margin: 30px;
-      padding: 30px;
+      margin: 30px 4px;
+      padding: 30px 4px;
   }
   .box5 {
+    width: 350px;
       /* background-color: rgb(204, 0, 255); */
       grid-column-start: 4;
       grid-column-end: 6;
       grid-row-start: 4;
       grid-row-end: 7;
-      margin: 30px;
+      margin: 30px 4px;
       padding: 20px;
   }
 

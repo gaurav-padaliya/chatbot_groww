@@ -6,6 +6,10 @@ module.exports = app => {
         const {text,userId} = req.body;
         const resultQuery = await chatbot.textQuery(text,userId);
         console.log("yo",resultQuery);
+
+        // console.log("yo",resultQuery.fulfillmentMessages[0].text.text);
+        // console.log("yo1",resultQuery.fulfillmentMessages[1].text.text);
+
         res.send(resultQuery);
     })
 }
