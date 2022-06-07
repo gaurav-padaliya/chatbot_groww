@@ -11,7 +11,7 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
-    <link rel="icon" type="image/x-icon" href="/assets/favicon.png">
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.png" />
     <link rel="stylesheet" href="../style/style.css" />
     <link rel="stylesheet" href="../style/kyc.css" />
     <link rel="stylesheet" href="../style/chatbox.css" />
@@ -129,13 +129,15 @@
                   class="dropdown-menu"
                   aria-labelledby="navbarDropdownMenuLink"
                 >
-                  <li>
-                    <a class="dropdown-item" href="#">Orders</a>
+                  <li id="orders">
+                    <a class="dropdown-item" href="/frontend/orders.html"
+                      >Orders</a
+                    >
                   </li>
                   <li>
                     <a class="dropdown-item" href="#">complete KYC</a>
                   </li>
-                  <li id = "logout">
+                  <li id="logout">
                     <a class="dropdown-item" href="#">Logout</a>
                   </li>
                 </ul>
@@ -196,12 +198,12 @@
           <div class="chat-box-overlay"></div>
 
           <!-- all chat shown here -->
-          <div class="chat-log kyc-user" style="height: 380px; display: none;">
+          <div class="chat-log kyc-user" style="height: 380px; display: none">
             <div
               class="chat-logs"
               style="height: 68%; overflow-y: scroll"
             ></div>
-            <div class="sug" style="height: 42%;">
+            <div class="sug" style="height: 42%">
               <div id="faq1" class="item" onclick="handleFaq(this)">
                 How to access to FD investing on Groww
               </div>
@@ -213,12 +215,9 @@
               </div>
             </div>
           </div>
-          <div class="chat-log kyc-dis" style="height: 370px; display:block;">
-            <div id='cm-msg-1' class="chat-msg user kyc">
-              <div class="cm-msg-text kyc1">
-                YOU ARE NOT Login
-                  please login
-              </div>
+          <div class="chat-log kyc-dis" style="height: 370px; display: block">
+            <div id="cm-msg-1" class="chat-msg user kyc">
+              <div class="cm-msg-text kyc1">YOU ARE NOT Login please login</div>
             </div>
           </div>
           <!--chat-log -->
@@ -296,10 +295,18 @@
       <div class="cont1 m-2 p-2">
         <div class="box1">
           <div class="container">
-            <nav class="navbar navbar-light bg-light m-3" style = "font-size: 21px;
-            font-weight: 500;">
-              <div class="container-fluid" style="justify-content: flex-start;">
-                <img class="" src="https://storage.googleapis.com/groww-assets/banking-assets/img/indus-ind.png" width="35" height="35" alt="IndusInd Bank">
+            <nav
+              class="navbar navbar-light bg-light m-3"
+              style="font-size: 21px; font-weight: 500"
+            >
+              <div class="container-fluid" style="justify-content: flex-start">
+                <img
+                  class=""
+                  src="https://storage.googleapis.com/groww-assets/banking-assets/img/indus-ind.png"
+                  width="35"
+                  height="35"
+                  alt="IndusInd Bank"
+                />
                 <a class="navbar-brand" href="#">Induslnd Bank FDs </a>
               </div>
             </nav>
@@ -333,10 +340,18 @@
         </div>
         <div class="box2">
           <div class="container">
-            <nav class="navbar navbar-light bg-light m-3" style = "font-size: 21px;
-            font-weight: 500;">
-              <div class="container-fluid" style="justify-content: flex-start;">
-                <img class="" src="https://assets-netstorage.groww.in/app-assets/others/Bajaj_1200x1200px-01.jpeg" width="35" height="35" alt="Bajaj Finance Ltd">
+            <nav
+              class="navbar navbar-light bg-light m-3"
+              style="font-size: 21px; font-weight: 500"
+            >
+              <div class="container-fluid" style="justify-content: flex-start">
+                <img
+                  class=""
+                  src="https://assets-netstorage.groww.in/app-assets/others/Bajaj_1200x1200px-01.jpeg"
+                  width="35"
+                  height="35"
+                  alt="Bajaj Finance Ltd"
+                />
                 <a class="navbar-brand" href="#">Bajaj Finances Ltd FDs </a>
               </div>
             </nav>
@@ -378,10 +393,18 @@
         </div>
         <div class="box3">
           <div class="container">
-            <nav class="navbar navbar-light bg-light m-3" style = "font-size: 21px;
-            font-weight: 500;">
-              <div class="container-fluid" style="justify-content: flex-start;">
-                <img class="" src="https://assets-netstorage.groww.in/app-assets/others/axisBank.svg" width="35" height="35" alt="Axis Bank">
+            <nav
+              class="navbar navbar-light bg-light m-3"
+              style="font-size: 21px; font-weight: 500"
+            >
+              <div class="container-fluid" style="justify-content: flex-start">
+                <img
+                  class=""
+                  src="https://assets-netstorage.groww.in/app-assets/others/axisBank.svg"
+                  width="35"
+                  height="35"
+                  alt="Axis Bank"
+                />
                 <a class="navbar-brand" href="#">Axis Bank FDs </a>
               </div>
             </nav>

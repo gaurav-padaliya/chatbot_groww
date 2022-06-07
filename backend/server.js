@@ -5,6 +5,7 @@ const cors = require("cors");
 const path = require('path');
 const app = express();
 const userAuth = require("./userAuth");
+const orders = require("./orders");
 
 app.use(cors());
 app.use(express.json({ limit: "1mb" }));
@@ -21,6 +22,7 @@ app.get('/', function(req, res) {
 
 app.post("/login", userAuth.login);
 app.post("/register", userAuth.register);
+app.use("/getAllOrders", orders);
 
 app.listen(port, () => {
   console.log("server started");

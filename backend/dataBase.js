@@ -17,6 +17,7 @@ const userSchema = new Schema({
       orderName: String,
       orderAmount: Number,
       orderId: String,
+      orderStatus: Boolean,
     },
   ],
 });

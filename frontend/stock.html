@@ -11,7 +11,7 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
-    <link rel="icon" type="image/x-icon" href="/assets/favicon.png">
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.png" />
     <link rel="stylesheet" href="../style/style.css" />
     <link rel="stylesheet" href="../style/kyc.css" />
     <link rel="stylesheet" href="../style/chatbox.css" />
@@ -129,13 +129,15 @@
                   class="dropdown-menu"
                   aria-labelledby="navbarDropdownMenuLink"
                 >
-                  <li>
-                    <a class="dropdown-item" href="#">Orders</a>
+                  <li id="orders">
+                    <a class="dropdown-item" href="/frontend/orders.html"
+                      >Orders</a
+                    >
                   </li>
                   <li>
                     <a class="dropdown-item" href="#">complete KYC</a>
                   </li>
-                  <li id = "logout">
+                  <li id="logout">
                     <a class="dropdown-item" href="#">Logout</a>
                   </li>
                 </ul>
@@ -174,7 +176,7 @@
       <!-- bottom content  -->
       <div class="thirdContainer">
         <div class="Con31">
-          <div class="con32">US MARKET OPENS AT  7:00 PM IST</div>
+          <div class="con32">US MARKET OPENS AT 7:00 PM IST</div>
         </div>
       </div>
       <!-- bottom content end -->
@@ -196,12 +198,12 @@
           <div class="chat-box-overlay"></div>
 
           <!-- all chat shown here -->
-          <div class="chat-log kyc-user" style="height: 380px; display: none;">
+          <div class="chat-log kyc-user" style="height: 380px; display: none">
             <div
               class="chat-logs"
               style="height: 68%; overflow-y: scroll"
             ></div>
-            <div class="sug" style="height: 42%;">
+            <div class="sug" style="height: 42%">
               <div id="faq1" class="item" onclick="handleFaq(this)">
                 How can I start investing in US stocks on Groww
               </div>
@@ -213,12 +215,9 @@
               </div>
             </div>
           </div>
-          <div class="chat-log kyc-dis" style="height: 370px; display:block;">
-            <div id='cm-msg-1' class="chat-msg user kyc">
-              <div class="cm-msg-text kyc1">
-                YOU ARE NOT Login
-                  please login
-              </div>
+          <div class="chat-log kyc-dis" style="height: 370px; display: block">
+            <div id="cm-msg-1" class="chat-msg user kyc">
+              <div class="cm-msg-text kyc1">YOU ARE NOT Login please login</div>
             </div>
           </div>
           <!--chat-log -->
@@ -305,8 +304,16 @@
               <div class="col-sm-3">
                 <div class="card">
                   <div class="card-body">
-                    <img class="usel42StockImage" src="https://assets-netstorage.groww.in/intl-stocks/logos/AAPL.png" width="35" height="35" alt="AAPL">
-                    <h5 class="card-title" style="font-size: 0.65rem;">Apple Inc.</h5>
+                    <img
+                      class="usel42StockImage"
+                      src="https://assets-netstorage.groww.in/intl-stocks/logos/AAPL.png"
+                      width="35"
+                      height="35"
+                      alt="AAPL"
+                    />
+                    <h5 class="card-title" style="font-size: 0.65rem">
+                      Apple Inc.
+                    </h5>
                     <p class="card-text">-3.86%</p>
                   </div>
                 </div>
@@ -314,8 +321,16 @@
               <div class="col-sm-3">
                 <div class="card">
                   <div class="card-body">
-                    <img class="usel42StockImage" src="https://assets-netstorage.groww.in/intl-stocks/logos/MSFT.png" width="35" height="35" alt="MSFT">
-                    <h5 class="card-title" style="font-size: 0.65rem;">Microsoft corp.</h5>
+                    <img
+                      class="usel42StockImage"
+                      src="https://assets-netstorage.groww.in/intl-stocks/logos/MSFT.png"
+                      width="35"
+                      height="35"
+                      alt="MSFT"
+                    />
+                    <h5 class="card-title" style="font-size: 0.65rem">
+                      Microsoft corp.
+                    </h5>
                     <p class="card-text">-1.66%</p>
                   </div>
                 </div>
@@ -323,8 +338,16 @@
               <div class="col-sm-3">
                 <div class="card">
                   <div class="card-body">
-                    <img class="usel42StockImage" src="https://assets-netstorage.groww.in/intl-stocks/logos/GOOGL.png" width="35" height="35" alt="GOOGL">
-                    <h5 class="card-title" style="font-size: 0.65rem;">Alphabat Inc A</h5>
+                    <img
+                      class="usel42StockImage"
+                      src="https://assets-netstorage.groww.in/intl-stocks/logos/GOOGL.png"
+                      width="35"
+                      height="35"
+                      alt="GOOGL"
+                    />
+                    <h5 class="card-title" style="font-size: 0.65rem">
+                      Alphabat Inc A
+                    </h5>
                     <p class="card-text">-1.23%</p>
                   </div>
                 </div>
@@ -332,8 +355,16 @@
               <div class="col-sm-3">
                 <div class="card">
                   <div class="card-body">
-                    <img class="usel42StockImage" src="https://assets-netstorage.groww.in/intl-stocks/logos/GOOGL.png" width="35" height="35" alt="GOOGL">
-                    <h5 class="card-title" style="font-size: 0.65rem;">Alphabat Inc C</h5>
+                    <img
+                      class="usel42StockImage"
+                      src="https://assets-netstorage.groww.in/intl-stocks/logos/GOOGL.png"
+                      width="35"
+                      height="35"
+                      alt="GOOGL"
+                    />
+                    <h5 class="card-title" style="font-size: 0.65rem">
+                      Alphabat Inc C
+                    </h5>
                     <p class="card-text">2.70%</p>
                   </div>
                 </div>
@@ -381,25 +412,84 @@
           <div class="col card cornerBox">
             <div class="card-body">
               <div class="card boxItem m-2">
-                
-                <div class="card-body" style="display: inline-flex;">
-                  <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" height="28" width="28" class="clrText"><path d="M8.677 10.281h-1.75V8.094h-.875v2.187h-1.75a.437.437 0 00-.437.438v12.25a.437.437 0 00.437.437h1.75v2.188h.875v-2.188h1.75a.437.437 0 00.438-.437v-12.25a.437.437 0 00-.438-.438zM16.188 4.594h-1.75V2.406h-.876v2.188h-1.75a.438.438 0 00-.437.437v12.25a.438.438 0 00.438.438h1.75v2.187h.874V17.72h1.75a.438.438 0 00.438-.438V5.031a.438.438 0 00-.438-.437zM23.698 9.406h-1.75V7.22h-.875v2.187h-1.75a.437.437 0 00-.438.438v12.25a.437.437 0 00.438.437h1.75v2.188h.875V22.53h1.75a.437.437 0 00.437-.437V9.844a.437.437 0 00-.437-.438z" fill="#44475B"></path></svg>
-                  <pre style="font-size: 0.7rem;">   F&O - Futures & Options</pre></div>
+                <div class="card-body" style="display: inline-flex">
+                  <svg
+                    viewBox="0 0 28 28"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="28"
+                    width="28"
+                    class="clrText"
+                  >
+                    <path
+                      d="M8.677 10.281h-1.75V8.094h-.875v2.187h-1.75a.437.437 0 00-.437.438v12.25a.437.437 0 00.437.437h1.75v2.188h.875v-2.188h1.75a.437.437 0 00.438-.437v-12.25a.437.437 0 00-.438-.438zM16.188 4.594h-1.75V2.406h-.876v2.188h-1.75a.438.438 0 00-.437.437v12.25a.438.438 0 00.438.438h1.75v2.187h.874V17.72h1.75a.438.438 0 00.438-.438V5.031a.438.438 0 00-.438-.437zM23.698 9.406h-1.75V7.22h-.875v2.187h-1.75a.437.437 0 00-.438.438v12.25a.437.437 0 00.438.437h1.75v2.188h.875V22.53h1.75a.437.437 0 00.437-.437V9.844a.437.437 0 00-.437-.438z"
+                      fill="#44475B"
+                    ></path>
+                  </svg>
+                  <pre style="font-size: 0.7rem">
+   F&O - Futures & Options</pre
+                  >
+                </div>
               </div>
               <div class="card boxItem m-2">
-                <div class="card-body" style="display: inline-flex;">
-                  <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" height="28" width="28" class="clrText"><path d="M13.008 3.967l-4.34 7.093c-.478.77.082 1.773.992 1.773h8.668c.91 0 1.47-1.003.992-1.773l-4.328-7.093a1.158 1.158 0 00-1.984 0zM20.417 25.667a5.25 5.25 0 100-10.5 5.25 5.25 0 000 10.5zM4.667 25.083h7a1.17 1.17 0 001.166-1.166v-7a1.17 1.17 0 00-1.166-1.167h-7A1.17 1.17 0 003.5 16.917v7a1.17 1.17 0 001.167 1.166z" fill="#44475B"></path></svg>
-                  <pre style="font-size: 0.7rem;"> ETF - Exchange Traded</pre></div>
+                <div class="card-body" style="display: inline-flex">
+                  <svg
+                    viewBox="0 0 28 28"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="28"
+                    width="28"
+                    class="clrText"
+                  >
+                    <path
+                      d="M13.008 3.967l-4.34 7.093c-.478.77.082 1.773.992 1.773h8.668c.91 0 1.47-1.003.992-1.773l-4.328-7.093a1.158 1.158 0 00-1.984 0zM20.417 25.667a5.25 5.25 0 100-10.5 5.25 5.25 0 000 10.5zM4.667 25.083h7a1.17 1.17 0 001.166-1.166v-7a1.17 1.17 0 00-1.166-1.167h-7A1.17 1.17 0 003.5 16.917v7a1.17 1.17 0 001.167 1.166z"
+                      fill="#44475B"
+                    ></path>
+                  </svg>
+                  <pre style="font-size: 0.7rem"> ETF - Exchange Traded</pre>
+                </div>
               </div>
               <div class="card boxItem m-2">
-                <div class="card-body" style="display: inline-flex;">
-                  <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" height="28" width="28" class="clrText"><path d="M1.167 12.578v.902a4.244 4.244 0 003.955 4.223v6.335c0 .44.356.796.796.796h2.817c.44 0 .796-.356.796-.796v-6.322h.461V8.335H5.411a4.244 4.244 0 00-4.244 4.244zM25.697 3.638a.796.796 0 00-.748-.08L11.852 9.13v7.773l13.097 5.57a.796.796 0 001.106-.731V4.3a.795.795 0 00-.358-.663z" fill="#44475B"></path></svg>
-                  <pre style="font-size: 0.7rem;">   IPO - Initial Public</pre></div>
+                <div class="card-body" style="display: inline-flex">
+                  <svg
+                    viewBox="0 0 28 28"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="28"
+                    width="28"
+                    class="clrText"
+                  >
+                    <path
+                      d="M1.167 12.578v.902a4.244 4.244 0 003.955 4.223v6.335c0 .44.356.796.796.796h2.817c.44 0 .796-.356.796-.796v-6.322h.461V8.335H5.411a4.244 4.244 0 00-4.244 4.244zM25.697 3.638a.796.796 0 00-.748-.08L11.852 9.13v7.773l13.097 5.57a.796.796 0 001.106-.731V4.3a.795.795 0 00-.358-.663z"
+                      fill="#44475B"
+                    ></path>
+                  </svg>
+                  <pre style="font-size: 0.7rem">   IPO - Initial Public</pre>
+                </div>
               </div>
               <div class="card boxItem m-2">
-                <div class="card-body" style="display: inline-flex;">
-                  <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" height="28" width="28" class="clrText"><path d="M25.703 9.321L15.614 1.696a2.716 2.716 0 00-3.22 0L2.303 9.32c-.965.725-1.371 2.015-1.004 3.193l3.854 12.342c.365 1.179 1.42 1.978 2.61 1.977h12.469c1.19 0 2.244-.798 2.61-1.977l3.854-12.342c.37-1.176-.032-2.466-.994-3.193z" fill="currentColor"></path><circle cx="13.999" cy="15.167" r="5.833" fill="#F6F6F7"></circle></svg>
-                  <pre style="font-size: 0.7rem;">SGB - Sovereign Gold Bond</pre></div>
+                <div class="card-body" style="display: inline-flex">
+                  <svg
+                    viewBox="0 0 28 28"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="28"
+                    width="28"
+                    class="clrText"
+                  >
+                    <path
+                      d="M25.703 9.321L15.614 1.696a2.716 2.716 0 00-3.22 0L2.303 9.32c-.965.725-1.371 2.015-1.004 3.193l3.854 12.342c.365 1.179 1.42 1.978 2.61 1.977h12.469c1.19 0 2.244-.798 2.61-1.977l3.854-12.342c.37-1.176-.032-2.466-.994-3.193z"
+                      fill="currentColor"
+                    ></path>
+                    <circle
+                      cx="13.999"
+                      cy="15.167"
+                      r="5.833"
+                      fill="#F6F6F7"
+                    ></circle>
+                  </svg>
+                  <pre style="font-size: 0.7rem">SGB - Sovereign Gold Bond</pre>
+                </div>
               </div>
             </div>
           </div>
