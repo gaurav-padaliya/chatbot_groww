@@ -9,7 +9,26 @@ exports.register = function (req, res) {
     userName: email,
     password: password,
     isKYCDone: false,
-    orders: [],
+    orders: [
+      {
+        orderName: "Reliance Petrolium",
+        orderAmount: 14000,
+        orderId: "2071",
+        orderStatus: true,
+      },
+      {
+        orderName: "Airtel",
+        orderAmount: 1400,
+        orderId: "2072",
+        orderStatus: true,
+      },
+      {
+        orderName: "TCS",
+        orderAmount: 4000,
+        orderId: "2073",
+        orderStatus: false,
+      },
+    ],
   });
   newUser.save(function (err, data) {
     if (!err) {
@@ -23,7 +42,7 @@ exports.register = function (req, res) {
 //Handling user login
 exports.login = function (req, res) {
   let isValid = false;
-  console.log(req.body)
+  console.log(req.body);
   User.find(function (err, users) {
     // console.log(req.body+" "+JSON.parse(users));
     if (!err) {
@@ -31,7 +50,7 @@ exports.login = function (req, res) {
         if (
           req.body.email === users[i].userName &&
           req.body.password === users[i].password
-          ) {
+        ) {
           isValid = true;
           res.status(200).send({ isLoggedIn: true });
         }

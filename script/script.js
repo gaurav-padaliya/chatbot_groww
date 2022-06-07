@@ -7,19 +7,19 @@ var $formSignIn = $("form.sign-in");
 var $formRegister = $("form.register");
 var $avatar = $(".nav-item.dropdown");
 
-if(sessionStorage.getItem('isLoggedIn') === 'true'){
-  isLoggedIn=true;
+if (sessionStorage.getItem("isLoggedIn") === "true") {
+  isLoggedIn = true;
   document.querySelector(".kyc-dis").style.display = "none";
   document.querySelector(".kyc-user").style.display = "block";
 }
 toggleIsLoggedIn(isLoggedIn);
 
-document.getElementById("logout").onclick = () =>{
+document.getElementById("logout").onclick = () => {
   sessionStorage.clear();
   document.querySelector(".kyc-dis").style.display = "block";
   document.querySelector(".kyc-user").style.display = "none";
   location.reload();
-}
+};
 
 document.getElementById("chat-submit").onclick = (e) => {
   e.preventDefault();
@@ -121,14 +121,14 @@ function serverMessage(msg) {
 function toggleIsLoggedIn(isValid) {
   if (isValid) {
     isLoggedIn = true;
-    sessionStorage.setItem('isLoggedIn',true);
+    sessionStorage.setItem("isLoggedIn", true);
     document.getElementById("loginRegisterBtn").style.display = "none";
     $mainPopUp.removeClass("visible");
     $avatar.removeClass("invisible");
     $avatar.addClass("visible");
   } else {
     isLoggedIn = false;
-    sessionStorage.setItem('isLoggedIn',false);
+    sessionStorage.setItem("isLoggedIn", false);
     document.getElementById("loginRegisterBtn").style.display = "inline";
   }
 }
@@ -174,6 +174,39 @@ document.getElementById("login-submit").onclick = (e) => {
   })();
 };
 
+document.getElementById("orders").onclick = () => {
+  var userName = "jello";
+  var url = "http://localhost:3030/getAllOrders/"+ userName;
+  (async () => {
+    const rawResponse = await fetch(url, {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    });
+    const content = await rawResponse.json();
+    content.forEach((order) => {
+      var trElement = document.createElement("tr");
+      var thElement = document.createElement("th");
+      thElement.setAttribute("scope", "row");
+      thElement.textContent = order.orderName;
+      trElement.appendChild(thElement);
+      var td1 = document.createElement("td");
+      td1.textContent = order.orderId;
+      trElement.appendChild(td1);
+      var td2 = document.createElement("td");
+      td2.textContent = order.orderAmount;
+      trElement.appendChild(td2);
+      var td3 = document.createElement("td");
+      td3.textContent = order.orderStatus ? "Completed" : "Processing";
+      trElement.appendChild(td3);
+      var tableBody = document.getElementById("tableBody");
+      tableBody.appendChild(trElement);
+    });
+  })();
+};
+
 $(".loginRegisterBtn").on("click", function () {
   $mainPopUp.addClass("visible");
   $signIn.addClass("active");
@@ -205,15 +238,14 @@ $(".closeBtn").on("click", function () {
 });
 // login/Register form code ends
 
-function handleFaq(el){
+function handleFaq(el) {
   // console.log(el.outerText);
-  const msg = el.outerText
-  generate_message(msg, 'self');
+  const msg = el.outerText;
+  generate_message(msg, "self");
   fetchmsg(msg);
   document.querySelector(".sug").style.opacity = "0";
-  setTimeout(()=>{
+  setTimeout(() => {
     document.querySelector(".chat-logs").style.height = "100%";
     document.querySelector(".sug").style.display = "none";
-    
-  },1000);
+  }, 1000);
 }
