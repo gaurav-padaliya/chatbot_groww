@@ -18,6 +18,7 @@ document.getElementById("logout").onclick = () => {
   sessionStorage.clear();
   document.querySelector(".kyc-dis").style.display = "block";
   document.querySelector(".kyc-user").style.display = "none";
+  window.history.pushState('','', "http://localhost:3030/");
   location.reload();
 };
 
@@ -65,9 +66,10 @@ document.getElementById("close").onclick = closeForm;
 
 function openForm() {
   var element = document.querySelector(".chat-box").style.display;
-  if (element == "none")
+  if (element == "block")
+    document.querySelector(".chat-box").style.display = "none";
+  else
     document.querySelector(".chat-box").style.display = "block";
-  else document.querySelector(".chat-box").style.display = "none";
 }
 function closeForm() {
   document.querySelector(".chat-box").style.display = "none";
@@ -191,6 +193,7 @@ $signIn.on("click", function () {
   $register.removeClass("active");
   $formSignIn.removeClass("move-left");
   $formRegister.removeClass("move-left");
+  location.reload()
 });
 
 $register.on("click", function () {
