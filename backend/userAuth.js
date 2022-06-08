@@ -42,9 +42,7 @@ exports.register = function (req, res) {
 //Handling user login
 exports.login = function (req, res) {
   let isValid = false;
-  console.log(req.body);
   User.find(function (err, users) {
-    // console.log(req.body+" "+JSON.parse(users));
     if (!err) {
       for (var i = 0; i < users.length; i++) {
         if (
@@ -62,5 +60,4 @@ exports.login = function (req, res) {
       res.send(err);
     }
   });
-  console.log(isValid);
 };
