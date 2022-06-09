@@ -11,6 +11,7 @@ if (sessionStorage.getItem("isLoggedIn") === "true") {
   isLoggedIn = true;
   document.querySelector(".kyc-dis").style.display = "none";
   document.querySelector(".kyc-user").style.display = "block";
+  document.querySelector(".avatar1").style.display = "inline";
 }
 toggleIsLoggedIn(isLoggedIn);
 
@@ -18,6 +19,9 @@ document.getElementById("logout").onclick = () => {
   sessionStorage.clear();
   document.querySelector(".kyc-dis").style.display = "block";
   document.querySelector(".kyc-user").style.display = "none";
+  document.querySelector(".avatar1").style.display = "none";
+
+  
   window.history.pushState('','', "http://localhost:3030/");
   location.reload();
 };
@@ -173,6 +177,7 @@ document.getElementById("login-submit").onclick = (e) => {
     });
     const content = await rawResponse.json();
     toggleIsLoggedIn(content.isLoggedIn);
+    location.reload();
   })();
 };
 
@@ -193,7 +198,6 @@ $signIn.on("click", function () {
   $register.removeClass("active");
   $formSignIn.removeClass("move-left");
   $formRegister.removeClass("move-left");
-  location.reload()
 });
 
 $register.on("click", function () {
