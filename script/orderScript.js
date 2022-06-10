@@ -1,6 +1,7 @@
-loadOrders();
-function loadOrders() {
-  var userName = "jello";
+loadOrders(sessionStorage.getItem("username"));
+function loadOrders(em) {
+  console.log(em);
+  var userName = em;
   var url = "http://localhost:3030/getAllOrders/" + userName;
   (async () => {
     const rawResponse = await fetch(url, {

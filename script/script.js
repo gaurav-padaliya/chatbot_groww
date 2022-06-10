@@ -177,6 +177,7 @@ document.getElementById("login-submit").onclick = (e) => {
     });
     const content = await rawResponse.json();
     toggleIsLoggedIn(content.isLoggedIn);
+    sessionStorage.setItem("username",email);
     location.reload();
   })();
 };
