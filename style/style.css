@@ -16,6 +16,7 @@ body{
 
     width: 100%;
     height: max-content;
+    min-height: 360px;
     padding: 20px;
     margin-bottom: 50px;
    /* width: 1600px; */
