@@ -112,7 +112,64 @@ function serverMessage(msg) {
   str += `          <div class="cm-msg-text">`;
   str += msg;
   str += `          </div>`;
+  if(window.location.href == 'http://localhost:3030/frontend/index.html'){
+    str += `
+  <div class="faq item cm-msg-text" onclick="handleFaq(this)">
+  How much does Groww charge for stocks
+  </div>
+  <div class="faq item cm-msg-text" onclick="handleFaq(this)">
+  Where can I see my demat account number?
+  </div>
+  <div class="faq item cm-msg-text" onclick="handleFaq(this)">
+  Why is my buy/sell disabled for certain stocks?
+  </div>`;
+  }else if(window.location.href == 'http://localhost:3030/frontend/mutual_fund.html'){
+    str += `
+  <div class="faq item cm-msg-text" onclick="handleFaq(this)">
+  How to add AutoPay using OTP for my SIPs
+  </div>
+  <div class="faq item cm-msg-text" onclick="handleFaq(this)">
+  How to start a SIP on Groww?
+  </div>
+  <div class="faq item cm-msg-text" onclick="handleFaq(this)">
+  How do monthly installments get paid automatically
+  </div>`;
+  }else if(window.location.href == 'http://localhost:3030/frontend/fixedDeposit.html'){
+    str += `
+    <div class="faq item cm-msg-text" onclick="handleFaq(this)">
+    How to access to FD investing on Groww
+    </div>
+    <div class="faq item cm-msg-text" onclick="handleFaq(this)">
+    How much time does it take to open a fixed deposit
+    </div>
+    <div class="faq item cm-msg-text" onclick="handleFaq(this)">
+    Can I register nominee for my FD?
+    </div>`;
+  }else if(window.location.href == 'http://localhost:3030/frontend/stock.html'){
+    str += `
+    <div class="faq item cm-msg-text" onclick="handleFaq(this)">
+    How can I start investing in US stocks on Groww
+    </div>
+    <div class="faq item cm-msg-text" onclick="handleFaq(this)">
+    How to add USD in Groww balance
+    </div>
+    <div class="faq item cm-msg-text" onclick="handleFaq(this)">
+    How long will it take to activate my Groww US stocks account
+    </div>`;
+  } else if(window.location.href == 'http://localhost:3030/frontend/gold.html'){
+    str += `
+    <div class="faq item cm-msg-text" onclick="handleFaq(this)">
+    Why am I not able to buy Digital Gold?
+    </div>
+    <div class="faq item cm-msg-text" onclick="handleFaq(this)">
+    How often does the live price change?
+    </div>
+    <div class="faq item cm-msg-text" onclick="handleFaq(this)">
+    How do I sell Digital Gold purchased on Groww?
+    </div>`;
+  }
   str += `        </div>`;
+
   $(".chat-logs").append(str);
   $("#cm-msg-" + INDEX)
     .hide()
